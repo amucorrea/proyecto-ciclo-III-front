@@ -2,19 +2,20 @@
  <div id="CrearCompranpm">
    <div>
      <h1>Agregar Compra</h1>
-     <form name="form" id="form">v-on:submit.prevent="procesar():">
-        <p> Id_Compra: <input type="numb" name="id_compra" placeholder="Id_Compra" class="form-comtrol" v-model= "compras.id_compra"/> </p>
-        <p> Cedula: <input tipe="numb" name="cedula" placeholder="cedula" class="form-comtrol" v-model= "compras.cedula"/>/></p>
-        <p>Nombre_Producto: <input tipe="text" name="Nombre_Producto" placeholder="Nombre_Producto" class="form-comtrol" v-model= "compras.Nombre_producto"/>/></p>
-        <p>Cantidad: <input tipe="numb" name="Cantidad" placeholder="Cantidad" class="form-comtrol" v-model= "compras.cantidad"/>/></p>
-        <p>Precio: <input tipe="numb" name="Precio" placeholder="Precio" class="form-comtrol" v-model= "compras.Precio"/>/> </p>
-        <p>Total: <input tipe="numb" name="Total" placeholder="Total" class="form-comtrol" v-model= "compras.Total"/>/></p>
-       
-        <hr />
+     <form id="form" v-on:submit.prevent="procesar">
+        <p> Id Compra: <input type="numb" name="id_compra" placeholder="Id_Compra" class="form-comtrol" v-model= "compras.id_compra"> </p>
+        <p> Cedula: <input type="numb" name="cedula" placeholder="cedula" class="form-comtrol" v-model= "compras.cedula"></p>
+        <p>Nombre_Producto: <input type="text" name="Nombre_Producto" placeholder="Nombre_Producto" class="form-comtrol" v-model= "compras.Nombre_producto"></p>
+        <p>Cantidad: <input type="numb" name="Cantidad" placeholder="Cantidad" class="form-comtrol" v-model= "compras.cantidad"></p>
+        <p>Precio: <input type="numb" name="Precio" placeholder="Precio" class="form-comtrol" v-model= "compras.Precio"></p>
+        <p>Total: <input type="numb" name="Total" placeholder="Total" class="form-comtrol" v-model= "compras.Total"></p>
+        <hr>
         <input type="submit" value="">
      </form>
     </div>
-     <table class="table">
+
+    <!--
+    <table class="table">
           <thead>
               <tr>
                  <th> id_compra</th>
@@ -39,6 +40,7 @@
              </tr>
         </tbody>    
     </div>
+    --> 
 </template>
 
 <script>
