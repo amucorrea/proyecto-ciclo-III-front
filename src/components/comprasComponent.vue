@@ -13,8 +13,6 @@
         <input type="submit" value="">
      </form>
     </div>
-
-    <!--
     <table class="table">
           <thead>
               <tr>
@@ -30,7 +28,6 @@
         <tbody>
             
              <tr>
-
                <td>{{d.id_compra}}</td>
                <td>{{d.cedula}}</td>
                <td>{{d.nombre_producto}}</td>
@@ -39,8 +36,7 @@
                <td>{{d.Total}}</td>
              </tr>
         </tbody>    
-    </div>
-    --> 
+    </div> 
 </template>
 
 <script>
@@ -59,13 +55,21 @@
             precio: "",
             Total:"",
             },
-
-        }
-      },
-    
-
+          }
+    },
   methods: {
-  addExpense(e) {
+    guardarCompra(){
+      this.form.token = localStorage.getItem("token");
+            axios.post("https://minisap01.herokuapp.com/clientes/compras/"+this.data)
+            .then(data =>{
+                console.log(data);
+                this.makeToast("Hecho","cliente creado","success");
+            }).catch( e =>{
+                console.log(e);
+                 this.makeToast("Error","Error al guardar","error");
+            })
+    },
+  addExpense(e) { 
       e.preventDefault();
       const input = document.querySelector('#input').value;
       if(input.trim() === 'none'){return alert('¡Usted debe llenar todos lo campos!')};

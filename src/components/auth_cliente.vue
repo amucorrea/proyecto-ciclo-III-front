@@ -85,9 +85,7 @@ methods: {
        params:{
             cc:Cedula
        }
-       }) 
-       
-
+       })        
     .then(function (response) {
            este.clientes_in= response.data;
            console.log(response);
